@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :abouts, only: [:index]
+
+  resources :menus
+
+  resources :faqs
+
+  resources :blogs
+
   resources :splashes, only: [:index]
 
   root 'splashes#index'

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product</strong>
+  <%= @menu.product %>
+</p>
+
+<p>
+  <strong>location</strong>
+  <%= @menu.location %>
+</p>
+
+<p>
+  <strong>kind</strong>
+  <%= @menu.kind %>
+</p>
+
+<p>
+  <strong>description</strong>
+  <%= @menu.description %>
+</p>
+
+<p>
+  <strong>image</strong>
+  <%= image_tag @menu.image %>
+</p>
+
+<p>
+  <strong>Gram</strong>
+  <%= @menu.gram %>
+</p>
+
+<p>
+  <strong>eigth</strong>
+  <%= @menu.eigth %>
+</p>
+
+<p>
+  <strong>Quart</strong>
+  <%= @menu.quart %>
+</p>
+
+<p>
+  <strong>Half</strong>
+  <%= @menu.half %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

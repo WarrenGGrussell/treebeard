@@ -1,0 +1,76 @@
+nav {
+	height: 100px;
+	@media #{$large-up} { @include center-block(1200px); }
+	@media #{$medium-only} { width: 100% }
+	@media #{$small-only} { width: 100%; }		
+	h2 {
+		width: 50%;
+		line-height: 2;
+		float: left;
+		font-size: 50px;
+	}
+	.menu {
+		@media #{$small-only} {
+			display: none;
+		}
+		@media #{$medium-up} {
+			display: visible;
+			width: 50%;
+			height: 100%;
+			margin-top: 5px;
+			float: right;
+			font-family: "Meditation";
+			@media #{$large-up} { font-size: 50px; }
+			@media #{$medium-only} { font-size: 40px; }
+			@media #{$small-only} { font-size: 40px; }
+		}
+		span {
+			float: right;
+			top: 30px;
+			margin: 2.0%;
+		}
+	}
+}
+
+//burger
+.burger-menu {
+  cursor: pointer;
+  background-color: black;
+  margin: 0 auto;
+  padding-left: 1.25em;
+  position: relative;
+  width: 40px;	 
+}
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-top: 7px solid white;
+  width: 100%;
+  height: 20px;
+  transition: 0.55s;
+}
+.menu-top {
+  top: 0;
+}
+.menu-middle {
+  top: 18px;
+}
+.menu-bottom {
+  top: 36px;
+}
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+.menu-middle-click {
+  opacity: 0;
+}
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}

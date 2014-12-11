@@ -1,0 +1,54 @@
+<section class="form">
+  <%= form_for(@menu) do |f| %>
+    <% if @menu.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+        <ul>
+        <% @menu.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :product %><br>
+      <%= f.text_field :product %>
+    </div>
+    <div class="field">
+      <%= f.label :location %><br>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :kind %><br>
+      <%= f.text_field :kind %>
+    </div>
+    <div class="field">
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :gram %><br>
+      <%= f.text_field :gram %>
+    </div>
+    <div class="field">
+      <%= f.label :eigth %><br>
+      <%= f.text_field :eigth %>
+    </div>
+    <div class="field">
+      <%= f.label :quart %><br>
+      <%= f.text_field :quart %>
+    </div>
+    <div class="field">
+      <%= f.label :half %><br>
+      <%= f.text_field :half %>
+    </div>
+    <div class="field">
+      <%= f.label :ounce %><br>
+      <%= f.text_field :ounce %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</section>

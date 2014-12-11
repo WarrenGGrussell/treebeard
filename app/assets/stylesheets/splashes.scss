@@ -4,7 +4,17 @@
 
 #tree {
 	background-image: url(/assets/tree.png);
-	background-size: 100% 100%;
+	@media #{$small-only} {
+		display: none;
+	}
+	@media #{$medium-only} {
+		background-size: 500px 500px;
+	}
+	@media #{$large-up} {
+		background-size: 600px 600px;
+	}
+	background-repeat: no-repeat;
+	background-position: 50% 20%;
 	height: 800px;
 	width: 80%;
 	.selection {
@@ -19,11 +29,14 @@
 		left: 70%;
 	}
 	.blog {
-		top: 70%;
+		top: 50%;
 		left: 10%;
 	}
 	.faq {
-		top: 70%;
+		top: 50%;
 		left: 70%;
+	}
+	.join {
+		top: 50%;
 	}
 }
