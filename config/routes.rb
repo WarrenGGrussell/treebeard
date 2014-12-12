@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   root 'splashes#index'
 
+  get '*unmatched_route', to: 'application#not_found'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

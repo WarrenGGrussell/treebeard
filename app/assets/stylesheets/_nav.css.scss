@@ -34,6 +34,9 @@ nav {
 
 //burger
 .burger-menu {
+	@media #{$large-up} { @include center-block(1200px); }
+	@media #{$medium-only} { width: 100% }
+	@media #{$small-only} { width: 100%; }	
   cursor: pointer;
   background-color: black;
   margin: 0 auto;

@@ -1,6 +1,6 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "tom", password: "tom", except: :index
+  http_basic_authenticate_with name: Rails.application.secrets.protocol_name, password: Rails.application.secrets.protocol_password, except: :index
   # GET /menus
   # GET /menus.json
   def index

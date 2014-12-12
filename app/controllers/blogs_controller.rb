@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: Rails.application.secrets.protocol_name, password: Rails.application.secrets.protocol_password, except: :index
 
   # GET /blogs
   # GET /blogs.json
