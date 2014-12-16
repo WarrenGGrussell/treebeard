@@ -1,5 +1,4 @@
-<section id="tree" class="12-small small-centered columns">
-  
+<section id="tree-wrapper" class="12-small small-centered columns">  
   <div class="selection menu">
     <h2><%= link_to "Menu", menus_path %></h2>
   </div>
@@ -15,5 +14,13 @@
   <div class="selection join">
     <h2>Join us</h2>
   </div>
+</section>
+
+<section id="slider-wrapper" class="12-small small-centered columns">
+  <ul class="slider" data-orbit>
+    <% @slider_images.each do |image| %>
+      <%= image_tag image[:source] %>
+    <% end %>
+  </ul> 
 </section>
   

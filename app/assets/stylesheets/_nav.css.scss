@@ -1,19 +1,34 @@
 nav {
-	height: 100px;
-	@media #{$large-up} { @include center-block(1200px); }
-	@media #{$medium-only} { width: 100% }
-	@media #{$small-only} { width: 100%; }		
+	background-color: $healing-green;
+	@media #{$medium-up} {
+		height: 100px;
+	}
+	@media #{$small-only} {
+		height: 80px;
+	}
+	@include scaling;		
 	h2 {
-		width: 50%;
-		line-height: 2;
+		text-align: center;
 		float: left;
-		font-size: 50px;
+		@media #{$large-up} {
+			width: 50%;
+			font-size: 50px;
+			line-height: 2;
+		}
+		@media #{$medium-only} {
+			width: 60%;
+			font-size: 40px;
+			line-height: 2;
+		}
+		@media #{$small-only} {
+			font-size: 7vw;
+			line-height: 2;
+		}
 	}
 	.menu {
-		@media #{$small-only} {
-			display: none;
-		}
-		@media #{$medium-up} {
+		@media #{$medium-only} { display: none; }
+		@media #{$small-only} { display: none; }
+		@media #{$large-up} {
 			display: visible;
 			width: 50%;
 			height: 100%;
@@ -32,13 +47,39 @@ nav {
 	}
 }
 
+//drop down menu
+.drop-down-menu {
+	height: 0px;
+	display: none;
+	@include transition(height, 1.0, ease-in-out);
+}
+
+.drop-down-menu.active {
+	@include scaling;
+	@include transition(height, 1.0, ease-in-out);
+	display: block;
+	position: inherit;
+	height: 400px; 
+	left: -18px;
+	list-style-type: none;
+	background-color: $healing-green;
+	@media #{$large-up} {display: none;}
+	li {
+		font-size: 60px;
+		font-family: "Meditation";
+		height: 20%;
+		text-align: center;
+	}	
+	li:hover {
+		opacity: 0.9;
+	}
+}
+
 //burger
 .burger-menu {
-	@media #{$large-up} { @include center-block(1200px); }
-	@media #{$medium-only} { width: 100% }
-	@media #{$small-only} { width: 100%; }	
+	@media #{$large-up} { display:none }	
+	float: right;
   cursor: pointer;
-  background-color: black;
   margin: 0 auto;
   padding-left: 1.25em;
   position: relative;
@@ -47,24 +88,24 @@ nav {
 .menu-global {
   backface-visibility: hidden;
   position: absolute;
-  left: 0;
-  border-top: 7px solid white;
+  left: -50px;
+  border-top: 7px solid $healing-purple;
   width: 100%;
   height: 20px;
   transition: 0.55s;
 }
 .menu-top {
-  top: 0;
+  top: 30px;
 }
 .menu-middle {
-  top: 18px;
+  top: 44px;
 }
 .menu-bottom {
-  top: 36px;
+  top: 60px;
 }
 .menu-top-click {
   backface-visibility: hidden;
-  top: 15px;
+  top: 40px;
   transform: rotate(50deg);
   transition: 0.55s 0.5s;
 }
@@ -73,7 +114,8 @@ nav {
 }
 .menu-bottom-click {
   backface-visibility: hidden;
-  top: 15px;
+  top: 40px;
+  left: -40px;
   transform: rotate(-410deg);
   transition: 0.55s 0.5s;
 }

@@ -1,3 +1,10 @@
+//colors
+$healing-green: #66C059;
+$healing-purple: #551A8B;
+$off-white: #F9F9F8;
+
+
+//media sizes
 $small-range: (0em, 40em);
 $medium-range: (40.063em, 64em);
 $large-range: (64.063em, 90em);
@@ -26,6 +33,14 @@ $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 $xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})";
 $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
 
+//format media sizing 
+@mixin scaling() {
+  @media #{$large-up} { @include center-block(1200px) }
+  @media #{$medium-only} { width: 100% }
+  @media #{$small-only} { width: 100% }
+}
+
+
 // fonts
 @mixin font-face($font-family, $file-path, $font-weight, $font-style) {
   @font-face {
@@ -41,12 +56,17 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
   }
 }	
 
-// declare fonts
+// declare fonts and colors
 @include font-face("Carita", "Carita", 400, normal);
 @include font-face("Meditation", "Meditation", 400, normal);
 
 h1, h2, h3 {
 	font-family: "Carita";
+  color: $primary-color;
+}
+
+a {
+  color: #fff;
 }
 
 // handy mixins 
@@ -57,13 +77,22 @@ h1, h2, h3 {
   margin-right: auto;
 }
 
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow:$top $left $blur $color #{$inset};
+  -moz-box-shadow:$top $left $blur $color #{$inset};
+  box-shadow:$top $left $blur $color #{$inset};
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
 // body defaults 
 body {
 	clear: both;
-}
-
-form {
-  @media #{$large-up} { @include center-block(1200px) }
-  @media #{$medium-only} { width: 100% }
-  @media #{$small-only} { width: 100% }
+  @include scaling;
 }
