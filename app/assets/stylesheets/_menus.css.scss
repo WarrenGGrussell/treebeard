@@ -1,0 +1,53 @@
+// Place all the styles related to the menus controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#menu-wrapper {
+	.filter-container {
+		display: inline-block;
+		position: inherit;
+		margin-right: 2.5;
+		.filter {
+			background-color: $healing-green;
+			h2 {
+				text-align: center;
+				line-height: 3.5;
+			}
+			input[type="text"] {
+				border: none;
+				background: transparent;
+				color: #fff;
+				width: 90%;
+				margin: 5%;
+			}
+			@media #{$large-up} {
+				height: 150px;
+			}
+			@media #{$medium-only} {
+				height: 100px;	
+			}
+			@media #{$small-only} {
+				display: inline-block;
+			}
+		}
+		.filter.search {
+			height: 50%;
+		}
+		.filter.indica:hover {
+			opacity: 0.8;
+		}
+		.filter.sativa:hover {
+			opacity: 0.8;
+		}
+	}
+
+	.product-container {
+		display: inline-block;
+		background: assets-url("vine.png");
+		height: 400px;
+	}
+
+	.products-listing {
+
+	}
+}

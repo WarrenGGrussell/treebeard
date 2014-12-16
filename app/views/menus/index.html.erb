@@ -1,33 +1,33 @@
-<h1>Listing menus</h1>
+<section id="menu-wrapper" class="small-12 columns">  
+  
+  <div class="filter-container small-12 medium-4 large-3 columns">
+    <div class="filter indica small-4 medium-12 large-12 columns">
+      <h2>Indica</h2>
+    </div>
+    <div class="filter sativa small-4 medium-12 large-12 columns">
+      <h2>Sativa</h2>
+    </div>
+    <div class="filter search small-4 medium-12 large-12 columns">
+      <input type="text" class="search" name="search" placeholder="search"></input>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>product</th>
-      <th>location</th>
-      <th>kind</th>
-      <th>description</th>
-      <th>image</th>
-      <th>gram</th>
-      <th>eight</th>
-      <th>quart</th>
-      <th>half</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="product-container small-12 medium-8 large-9 columns">
+    <ul data-orbit>
+      <% @menus.each do |menu| %>
+        <li><%= image_tag menu.image %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
 
+<table class="small-12 columns">
   <tbody>
-    <% @menus.each do |menu| %>    
+    <% @menus.each do |menu| %> 
     <tr>
+      <td><%= image_tag menu.image.thumb %></td>
       <td><%= menu.product %></td>
       <td><%= menu.location %></td>
-      <td><%= menu.kind %></td>
-      <td><%= menu.description %></td>
-      <td><%= image_tag menu.image %></td>
-      <td><%= menu.gram %></td>
-      <td><%= menu.eigth %></td>
-      <td><%= menu.quart %></td>
-      <td><%= menu.half %></td>
     </tr>
     <% end %>
   </tbody>

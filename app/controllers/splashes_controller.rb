@@ -4,7 +4,7 @@ class SplashesController < ApplicationController
   # GET /splashes
   # GET /splashes.json
   def index
-    
+    @slider_images = StaticFiles.slider_images
   end
 
   # GET /splashes/1

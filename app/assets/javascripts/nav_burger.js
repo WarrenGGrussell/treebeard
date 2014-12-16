@@ -1,7 +1,7 @@
 var Menu = {
   
   el: {
-    ham: $('.menu'),
+    ham: $('.burger-menu'),
     menuTop: $('.menu-top'),
     menuMiddle: $('.menu-middle'),
     menuBottom: $('.menu-bottom')
@@ -18,6 +18,7 @@ var Menu = {
         function(event) {
         Menu.activateMenu(event);
         event.preventDefault();
+        $('.drop-down-menu').toggleClass('active');
       }
     );
   },

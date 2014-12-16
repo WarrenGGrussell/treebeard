@@ -2,23 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#tree {
+
+#tree-wrapper {
 	background-image: url(/assets/tree.png);
+	background-color: $off-white;
+	@include scaling;
 	@media #{$small-only} {
-		display: none;
+		background-size: 200px 200px;
+		height: 250px;
 	}
 	@media #{$medium-only} {
-		background-size: 500px 500px;
+		background-size: 300px 300px;
+		height: 350px;
 	}
 	@media #{$large-up} {
-		background-size: 600px 600px;
+		background-size: 400px 400px;
+		height: 450px;
 	}
 	background-repeat: no-repeat;
 	background-position: 50% 20%;
-	height: 800px;
+	height: 82.5vh;
 	width: 80%;
 	.selection {
 		position: absolute;
+		a {
+			color: #000;
+		}
 	}
 	.menu {
 		top: 10%;
@@ -39,4 +48,8 @@
 	.join {
 		top: 50%;
 	}
+}
+
+#slider-wrapper {
+	background-color: #fff;
 }

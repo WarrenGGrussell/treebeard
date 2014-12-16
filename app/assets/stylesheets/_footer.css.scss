@@ -1,4 +1,16 @@
 footer {
-	position: absolute;
+	@include scaling;	
+	position: inherit;
 	bottom: 0px;
+	height: 400px;
+	background-color: $healing-green;
+	.footer-content-wrapper {
+		position: inherit;
+		height: 350px;	
+	}
+	.copywrite {
+		position: absolute;
+		width: 100%;
+		bottom: 0px;
+	}
 }
