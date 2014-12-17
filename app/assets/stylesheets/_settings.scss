@@ -70,7 +70,7 @@ a {
 }
 
 // handy mixins 
-@mixin center-block($width) {
+@mixin center-block($width: null) {
   width: $width;
   display: block;
   margin-left: auto;

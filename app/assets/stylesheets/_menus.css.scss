@@ -9,21 +9,20 @@
 		margin-right: 2.5;
 		.filter {
 			background-color: $healing-green;
+			margin-top: 5px;
 			h2 {
 				text-align: center;
-				line-height: 3.5;
+				line-height: 2.5;
 			}
-			input[type="text"] {
+			input {
 				border: none;
-				background: transparent;
+				background: #fff;
+				border-radius: 5px;
 				color: #fff;
 				width: 90%;
 				margin: 5%;
 			}
-			@media #{$large-up} {
-				height: 150px;
-			}
-			@media #{$medium-only} {
+			@media #{$medium-up} {
 				height: 100px;	
 			}
 			@media #{$small-only} {
@@ -32,11 +31,11 @@
 		}
 		.filter.search {
 			height: 50%;
+			@media #{$small-only} {
+				width: 100%;
+			}
 		}
-		.filter.indica:hover {
-			opacity: 0.8;
-		}
-		.filter.sativa:hover {
+		.filter:active {
 			opacity: 0.8;
 		}
 	}
@@ -45,9 +44,27 @@
 		display: inline-block;
 		background: assets-url("vine.png");
 		height: 400px;
+		.slide {
+			min-height: 380px;
+		}
 	}
+}
 
-	.products-listing {
-
+.list-item {
+	width: 30;
+	text-align: center;
+	img {
+		width: 50%;
+		margin-right: 25%;
+		margin-left: 25%;
+		margin-top: 2.5%;
 	}
+	h3 {
+		color: #000;	
+	}
+}
+
+.list-item:hover {
+	background-color: $healing-green;
+	@include center-block();
 }
