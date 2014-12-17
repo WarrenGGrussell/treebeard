@@ -49,22 +49,22 @@ nav {
 
 //drop down menu
 .drop-down-menu {
-	height: 0px;
+	margin: -400px;
 	display: none;
-	@include transition(height, 1.0, ease-in-out);
+	@include transition(margin, 1.0, ease-in-out);
 }
 
 .drop-down-menu.active {
 	@include scaling;
-	@include transition(height, 1.0, ease-in-out);
+	@include transition(margin, 1.0, ease-in-out);
 	display: block;
 	position: inherit;
+	margin: 0px;
 	height: 400px; 
-	left: -18px;
 	list-style-type: none;
-	background-color: $healing-green;
 	@media #{$large-up} {display: none;}
 	li {
+		background-color: $healing-green;
 		font-size: 60px;
 		font-family: "Meditation";
 		height: 20%;

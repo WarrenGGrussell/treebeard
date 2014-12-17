@@ -1,6 +1,9 @@
 <section id="menu-wrapper" class="small-12 columns">  
   
   <div class="filter-container small-12 medium-4 large-3 columns">
+    <div class="filter all small-4 medium-12 large-12 columns">
+      <h2>All</h2>
+    </div>
     <div class="filter indica small-4 medium-12 large-12 columns">
       <h2>Indica</h2>
     </div>
@@ -13,25 +16,11 @@
   </div>
 
   <div class="product-container small-12 medium-8 large-9 columns">
-    <ul data-orbit>
-      <% @menus.each do |menu| %>
-        <li><%= image_tag menu.image %></li>
-      <% end %>
-    </ul>
+    <ul data-orbit></ul>
   </div>
 </section>
 
-<table class="small-12 columns">
-  <tbody>
-    <% @menus.each do |menu| %> 
-    <tr>
-      <td><%= image_tag menu.image.thumb %></td>
-      <td><%= menu.product %></td>
-      <td><%= menu.location %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="product-list small-12 columns"></div>
 
 <br>
 
