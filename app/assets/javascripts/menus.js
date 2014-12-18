@@ -17,6 +17,9 @@ $(document).ready(function() {
 												 value.product + "<br>" +
 												 value.description + "<br>" +
 												"</div></li>");
+
+		$(".orbit-next").show();
+		$(".orbit-prev").show();
 	}
 
 	function clearContent() {
@@ -37,25 +40,34 @@ $(document).ready(function() {
 	function findProduct(id, data) {
 		$.each(data, function(index, value) {
 			if( value.id === id ) {
+				productSlider.empty();
+
 				productSlider.prepend("<li class='slide' ><img src=" + value.image.url + ">" +
 												"<div class='orbit-caption'>" + 
 												 value.product + "<br>" +
 												 value.description + "<br>" +
 												"</div></li>");
+
+				$(".orbit-next").hide();
+				$(".orbit-prev").hide();
 			}
 		})
 	}
 
+	function addIdfinder(data, self) {
+		$(".list-item").on("click", function() {
+			id = self.data("id");
+			self.addClass("active");
+			findProduct(id, data);
+		});
+	}
+
 	function clickHandlers(data) { 
-		
 		$(".filter.indica").on('click', function() {
 			clearContent();
 			$(this).addClass("active");
 			appender(data, "indica", function() {
-					$(".list-item").on("click", function() {
-						id = $(this).data("id");
-						findProduct(id, data)
-				});
+				addIdfinder(data, $(this));
 			});
 		});
 
@@ -63,10 +75,7 @@ $(document).ready(function() {
 			clearContent();
 			$(this).addClass("active");
 			appender(data, "sativa", function() {
-					$(".list-item").on("click", function() {
-						id = $(this).data("id");
-						findProduct(id, data)
-				});
+					addIdfinder(data, $(this));
 			});
 		});
 
@@ -75,8 +84,7 @@ $(document).ready(function() {
 			$(this).addClass("active");
 			appender(data, "all", function() {
 				$(".list-item").on("click", function() {
-						id = $(this).data("id");
-						findProduct(id, data)
+					addIdfinder(data, $(this));
 				});
 			});
 		});
@@ -95,8 +103,7 @@ $(document).ready(function() {
 			clickHandlers(data);
 			appender(data, "all", function() {
 				$(".list-item").on("click", function() {
-						id = $(this).data("id")
-						findProduct(id, data);				
+					addIdfinder(data, $(this));				
 				});
 			});
 		}	
