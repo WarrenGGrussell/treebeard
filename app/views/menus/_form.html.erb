@@ -21,7 +21,7 @@
     </div>
     <div class="field">
       <%= f.label :kind %><br>
-      <%= f.text_field :kind %>
+      <%= f.select :kind, options_for_select(["satvia", "indica"]) %>
     </div>
     <div class="field">
       <%= f.label :description %>

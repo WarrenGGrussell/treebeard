@@ -35,9 +35,10 @@
 				width: 100%;
 			}
 		}
-		.filter:active {
-			opacity: 0.8;
-		}
+	}
+
+	.filter.active {
+		opacity: 0.8;
 	}
 
 	.product-container {
@@ -45,7 +46,24 @@
 		background: assets-url("vine.png");
 		height: 400px;
 		.slide {
-			min-height: 380px;
+			height: 400px;
+			img {
+				@media #{$large-up} {
+					width: 50%;
+					margin-right: 25%;
+					margin-left: 25%;
+				}
+				@media #{$medium-only} {
+					width: 70%;
+					margin-right: 15%;
+					margin-left: 15%;
+				}
+				@media #{$small-only} {
+					width: 90%;
+					margin-left: 5%;
+					margin-right: 5%;
+				}
+			}
 		}
 	}
 }
@@ -64,7 +82,15 @@
 	}
 }
 
+.list-item.active {
+	background-color: $healing-green;
+}
+
 .list-item:hover {
 	background-color: $healing-green;
 	@include center-block();
+}
+
+.orbit-next, .orbit-prev {
+	background-color: $healing-green !important;
 }
