@@ -40,7 +40,6 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
   @media #{$small-only} { width: 100% }
 }
 
-
 // fonts
 @mixin font-face($font-family, $file-path, $font-weight, $font-style) {
   @font-face {
@@ -63,6 +62,7 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 h1, h2, h3 {
 	font-family: "Carita";
   color: $primary-color;
+  clear: both;
 }
 
 a {
@@ -91,8 +91,13 @@ a {
   transition: $transition-property $transition-time $method;
 }
 
-// body defaults 
-body {
-	clear: both;
-  @include scaling;
+@mixin inline-blocks-centering($margin: 2px, $percentage: 33%, $pixal: 25px) {
+  display: inline-block;
+  margin: $margin;
+  width: -moz-calc($percentage% - $pixal);     /* Firefox */
+  width: -webkit-calc($percentage% - $pixal);  /* WebKit */
+  width: -o-calc($percentage% - $pixal);       /* Opera */
+  width: calc($percentage% - $pixal);          /* Standard */
 }
+
+

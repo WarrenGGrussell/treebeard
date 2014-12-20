@@ -1,23 +1,12 @@
-<h1>Listing faqs</h1>
+<section id="faq">
+  <h2>FAQ</h2>
+  <ul class="accordion" data-accordion>
+  <% @faqs.each do |faq|  %>
+    <li class="accordion-navigation">
+      <a href="#panel_<%= faq.id %>"><%= faq.question %></a>
+      <div id="panel_<%= faq.id %>" class="content active"><%= faq.answer %></div>
+    </li>
+  <% end %>
+  </ul>
+</section>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @faqs.each do |faq| %>
-      <tr>
-        <td><%= link_to 'Show', faq %></td>
-        <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
-        <td><%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Faq', new_faq_path %>

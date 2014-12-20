@@ -1,31 +1,15 @@
-<h1>Listing blogs</h1>
+<section id="blogs-wrapper">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Author</th>
-      <th>Timestamp</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>News</h1>
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
-        <td><%= blog.author %></td>
-        <td><%= blog.timestamp %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @blogs.each do |blog| %>
+    <div class="blog-container">
+      <h1><%= blog.title %></h1>
+      <h2><%= blog.author %></h2>
+      <h4><%= blog.content%></h4>
+      <h5>Posted on:<%= blog.created_at.strftime("%d %b. %Y") %></h5>
+    </div>
+  <% end %>
 
-<br>
+</section>
 
-<%= link_to 'New Blog', new_blog_path %>
