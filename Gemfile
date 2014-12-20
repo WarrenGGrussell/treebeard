@@ -34,7 +34,7 @@ gem "mini_magick"
 gem "carrierwave"
 
 # pagination 
-gem 'kaminari'
+# gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

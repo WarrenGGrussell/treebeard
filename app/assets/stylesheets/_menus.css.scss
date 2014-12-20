@@ -14,13 +14,30 @@
 				text-align: center;
 				line-height: 2.5;
 			}
+			border: none;
+			border-radius: 5px;
 			input {
-				border: none;
+				float: left;
 				background: #fff;
-				border-radius: 5px;
-				color: #fff;
-				width: 90%;
+				color: #000;
+				width: 60%;
 				margin: 5%;
+			}
+			button {
+				float: right;
+				margin-top: 5%;
+				width: 30%;
+				height: 37px;
+				text-align: center;
+			}
+			.not-found {
+				display: none;
+				width: 60%;
+				float: left;
+				h4 {
+					display: relative;	
+					width: 100%;
+				}
 			}
 			@media #{$medium-up} {
 				height: 100px;	
@@ -44,10 +61,12 @@
 	.product-container {
 		display: inline-block;
 		background: assets-url("vine.png");
-		height: 400px;
+		min-height: 400px;
 		.slide {
 			height: 400px;
 			img {
+				height: auto;
+				margin-top: 2.5%;
 				@media #{$large-up} {
 					width: 50%;
 					margin-right: 25%;
@@ -65,12 +84,46 @@
 				}
 			}
 		}
+		.orbit-caption {
+			width: 100%;
+			h4 {
+				color: #fff;
+				text-align: center;
+			}	
+			h5 {
+				color: #fff;
+			}
+			span {
+				width: 25%;
+			}
+		}
 	}
 }
 
 .list-item {
-	width: 30;
 	text-align: center;
+	display: inline-block;
+	@media #{$large-up} {
+		margin: 3px;
+		width: -moz-calc(33% - 25px); 		/* Firefox */
+		width: -webkit-calc(33% - 25px);  /* WebKit */
+		width: -o-calc(33% - 25px);				/* Opera */
+		width: calc(33% - 25px); 					/* Standard */
+	}
+	@media #{$medium-only} {
+		margin: 3px;
+		width: -moz-calc(50% - 15px); 		/* Firefox */
+		width: -webkit-calc(50% - 15px);  /* WebKit */
+		width: -o-calc(50% - 15px);				/* Opera */
+		width: calc(50% - 15px); 					/* Standard */
+	}
+	@media #{$small-only} {
+		margin: 3px;
+		width: -moz-calc(100% - 12px); 		/* Firefox */
+		width: -webkit-calc(100% - 12px);  /* WebKit */
+		width: -o-calc(100% - 12px);				/* Opera */
+		width: calc(100% - 12px); 					/* Standard */
+	}
 	img {
 		width: 50%;
 		margin-right: 25%;
@@ -88,9 +141,12 @@
 
 .list-item:hover {
 	background-color: $healing-green;
-	@include center-block();
 }
 
 .orbit-next, .orbit-prev {
 	background-color: $healing-green !important;
+}
+
+.orbit-container {
+	height: 400px;
 }
